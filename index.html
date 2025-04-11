@@ -5,76 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Partito Novalista</title>
   <style>
-    body {
+    /* Reset e stile globale */
+    * {
       margin: 0;
       padding: 0;
-      font-family: "Times New Roman", Times, serif;
-      color: #000000;
-      background: url('sfondo.gif') no-repeat center center fixed;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: url('images/background.gif') no-repeat center center fixed; /* Percorso GIF */
       background-size: cover;
+      color: white;
+      line-height: 1.6;
+      animation: backgroundFade 5s ease-in-out;
+    }
+
+    @keyframes backgroundFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header, footer {
-      background-color: rgba(244, 196, 48, 0.9); /* giallo trasparente */
-      color: #000000;
+      background-color: rgba(0, 0, 0, 0.7);
       text-align: center;
-      padding: 20px;
-    }
-
-    header img {
-      max-width: 150px;
-      height: auto;
+      padding: 40px 20px 20px 20px;
     }
 
     header h1 {
-      margin: 10px 0 5px 0;
+      font-size: 2.5em;
+      font-weight: 600;
+      color: white;
+      animation: fadeInTitle 2s ease-in-out;
+    }
+
+    @keyframes fadeInTitle {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header p.slogan {
-      color: #C62828;
-      font-weight: bold;
+      color: #f4c430;
+      font-weight: 500;
       font-size: 1.2em;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     nav {
-      background-color: #C62828;
-      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px 0;
       text-align: center;
+      backdrop-filter: blur(5px);
     }
 
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #ffffff;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 1.1em;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #f4c430;
+      transform: scale(1.05);
     }
 
     main {
-      background-color: rgba(255, 255, 255, 0.92);
-      padding: 30px;
-      margin: 30px auto;
-      max-width: 1000px;
-      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      animation: fadeInSection 2s ease-in-out;
+    }
+
+    @keyframes fadeInSection {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
-      color: #C62828;
+      color: #f4c430;
+      margin-bottom: 20px;
     }
 
     ul {
-      list-style: square;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #f4c430;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
 
     footer p {
-      margin: 0;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    /* Effetti di scroll dolce */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Media Queries per mobile */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      header p.slogan {
+        font-size: 1em;
+      }
+
+      nav a {
+        font-size: 1em;
+        margin: 0 15px;
+      }
+
+      main {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      h2 {
+        font-size: 1.8em;
+      }
+
+      footer p {
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      nav a {
+        font-size: 0.9em;
+        margin: 0 10px;
+      }
+
+      main {
+        padding: 15px;
+        margin: 10px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Logo Novalismo" />
     <h1>Partito Novalista</h1>
     <p class="slogan">NEUTRALITÀ – SICUREZZA – LIBERTÀ: IL FUTURO È NOVALISTA!</p>
   </header>
@@ -107,7 +200,6 @@
     <section id="contatti">
       <h2>Contattaci</h2>
       <p>Email: partitonovalista@gmail.com</p>
-      <p>Telefono: 3665372632</p>
     </section>
   </main>
 
