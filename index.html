@@ -5,52 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Partito Novalista</title>
   <style>
-    body, html {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: "Times New Roman", Times, serif;
       color: #000000;
+      background: url('sfondo.gif') no-repeat center center fixed;
+      background-size: cover;
     }
 
-    /* Sfondo animato con gradiente */
-    body {
-      background: linear-gradient(-45deg, #fff7cc, #ffdf80, #fff0b3, #ffe680);
-      background-size: 400% 400%;
-      animation: gradient 20s ease infinite;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header {
+    header, footer {
+      background-color: rgba(244, 196, 48, 0.9); /* giallo trasparente */
+      color: #000000;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 20px;
     }
 
     header img {
-      max-width: 180px;
+      max-width: 150px;
       height: auto;
-      margin-bottom: 10px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.2em;
+      margin: 10px 0 5px 0;
     }
 
     header p.slogan {
-      color: #990000;
+      color: #C62828;
       font-weight: bold;
-      font-size: 1.3em;
-      margin-top: 10px;
+      font-size: 1.2em;
+      margin-top: 5px;
     }
 
     nav {
-      background-color: #990000;
+      background-color: #C62828;
       padding: 10px;
       text-align: center;
     }
@@ -63,34 +51,30 @@
     }
 
     main {
-      padding: 20px;
-    }
-
-    section {
       background-color: rgba(255, 255, 255, 0.92);
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 1000px;
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: #990000;
+      color: #C62828;
     }
 
-    footer {
-      background-color: #FFD700;
-      color: #000000;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
+    ul {
+      list-style: square;
+    }
+
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Logo Novalista" />
+    <img src="logo.png" alt="Logo Novalismo" />
     <h1>Partito Novalista</h1>
     <p class="slogan">NEUTRALITÀ – SICUREZZA – LIBERTÀ: IL FUTURO È NOVALISTA!</p>
   </header>
@@ -117,12 +101,13 @@
         <li>Trasparenza amministrativa</li>
         <li>Economia sociale e inclusiva</li>
         <li>Digitalizzazione dei servizi pubblici</li>
-     </ul>
+      </ul>
     </section>
 
     <section id="contatti">
       <h2>Contattaci</h2>
       <p>Email: partitonovalista@gmail.com</p>
+      <p>Telefono: 3665372632</p>
     </section>
   </main>
 
