@@ -1,36 +1,168 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programma - Partito Novalista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programma – Partito Novalista</title>
   <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-      background-color: #f2f2f2;
-      color: #000000;
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+      background-color: #000000;
+      color: #F4C430;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
-    h1 {
-      color: #990000;
+
+    body.fade-in {
+      opacity: 1;
     }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    a {
+      color: #F4C430;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    a:hover {
+      color: #C62828;
+      transform: scale(1.05);
+    }
+
+    header {
+      background-color: #000000;
+      text-align: center;
+      padding: 50px 20px 30px;
+      border-bottom: 2px solid #C62828;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #F4C430;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #111111;
+      padding: 15px;
+      text-align: center;
+      box-shadow: inset 0 -1px 0 #C62828;
+    }
+
+    nav a {
+      margin: 0 20px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 10px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: #111111;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(244, 196, 48, 0.05);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #F4C430;
+      border-bottom: 1px solid #C62828;
+      padding-bottom: 10px;
+    }
+
     ul {
-      line-height: 1.6;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: #C62828;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #000000;
+      text-align: center;
+      padding: 25px;
+      color: #F4C430;
+      font-size: 0.9em;
+      border-top: 2px solid #C62828;
     }
   </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(link => {
+        const url = new URL(link.href, window.location.href);
+        if (url.hostname === window.location.hostname) {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = link.href;
+            }, 500);
+          });
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-  <h1>Il nostro programma</h1>
-  <ul>
-    <li>Neutralità internazionale</li>
-    <li>Sicurezza e Difesa interna</li>
-    <li>Liberalizzare il diritto di decidere</li>
-    <li>Transizione ecologica e sostenibilità</li>
-    <li>Trasparenza amministrativa</li>
-    <li>Economia sociale e inclusiva</li>
-    <li>Digitalizzazione dei servizi pubblici</li>
-  </ul>
-  <p><a href="index.html">Torna alla Home</a></p>
+
+  <header>
+    <h1>Programma</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>I punti chiave</h2>
+      <ul>
+        <li>Neutralità internazionale</li>
+        <li>Sicurezza e Difesa interna</li>
+        <li>Liberalizzare il diritto di decidere</li>
+        <li>Sanità pubblica accessibile, moderna e veloce</li>
+        <li>Transizione ecologica e sostenibilità</li>
+        <li>Trasparenza amministrativa</li>
+        <li>Economia sociale e inclusiva</li>
+        <li>Digitalizzazione dei servizi pubblici</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Partito Novalista - Tutti i diritti riservati</p>
+  </footer>
+
 </body>
 </html>
