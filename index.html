@@ -27,7 +27,7 @@
 
     header {
       text-align: center;
-      background-color: #000000;
+      background-color: #1c1c1c; /* cambiato */
       padding: 60px 20px 40px;
       border-radius: 0 0 30px 30px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -68,14 +68,8 @@
     }
 
     @keyframes fadeSlide {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     nav {
@@ -140,8 +134,8 @@
     }
 
     footer {
-      background-color: #000000;
-      color: #888;
+      background-color: #1c1c1c; /* cambiato */
+      color: #aaaaaa;
       text-align: center;
       padding: 25px;
       font-size: 0.9em;
@@ -174,7 +168,6 @@
   </footer>
 
   <script>
-    // Scroll reveal effect
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
