@@ -6,19 +6,32 @@
   <title>Partito Novalista</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       background-color: #f2f2f2;
+      color: #000000;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #003366;
-      color: white;
+      background-color: #FFD700; /* Giallo banner */
       padding: 20px;
       text-align: center;
     }
+    header img {
+      max-width: 150px;
+      height: auto;
+    }
+    header h1 {
+      margin: 10px 0 5px 0;
+    }
+    header p.slogan {
+      color: #990000; /* Rosso dettaglio */
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 5px;
+    }
     nav {
-      background-color: #0055a5;
+      background-color: #990000; /* Rosso barra navigazione */
       padding: 10px;
       text-align: center;
     }
@@ -26,13 +39,14 @@
       color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
     }
     main {
       padding: 20px;
     }
     footer {
-      background-color: #003366;
-      color: white;
+      background-color: #FFD700; /* Giallo footer */
+      color: #000000;
       text-align: center;
       padding: 10px;
       margin-top: 30px;
@@ -42,8 +56,9 @@
 <body>
 
   <header>
+    <img src="logo.png" alt="Logo Novalismo">
     <h1>Partito Novalista</h1>
-    <p>Per un futuro nuovo e giusto</p>
+    <p class="slogan">NEUTRALITÀ – SICUREZZA – LIBERTÀ: IL FUTURO È NOVALISTA!</p>
   </header>
 
   <nav>
@@ -61,10 +76,12 @@
     <section id="programma">
       <h2>Il nostro programma</h2>
       <ul>
+        <li>Neutralità internazionale</li>
+        <li>Sicurezza e Difesa interna</li>
+        <li>Liberalizzare il diritto di decidere</li>
         <li>Transizione ecologica e sostenibilità</li>
         <li>Trasparenza amministrativa</li>
         <li>Economia sociale e inclusiva</li>
-        <li>Istruzione accessibile e moderna</li>
         <li>Digitalizzazione dei servizi pubblici</li>
       </ul>
     </section>
