@@ -58,7 +58,7 @@
     }
 
     header p.slogan {
-      color: #ffffff; /* Modificato da #C62828 */
+      color: #ffffff;
       font-weight: 600;
       font-size: 1.4em;
       margin-top: 12px;
@@ -78,11 +78,31 @@
       text-align: center;
       border-radius: 0 0 20px 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 10px;
     }
 
     nav a {
       color: white;
-      margin: 0 25px;
       text-decoration: none;
       font-weight: 800;
       font-size: 1.2em;
@@ -142,6 +162,97 @@
       border-radius: 20px 20px 0 0;
       margin-top: 60px;
     }
+
+    /* MEDIA QUERIES */
+
+    @media (max-width: 1024px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      header p.slogan {
+        font-size: 1.2em;
+      }
+
+      nav a {
+        font-size: 1.1em;
+      }
+
+      section {
+        padding: 50px 30px;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        margin: auto;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 15px;
+        gap: 15px;
+        animation: fadeSlide 0.5s ease forwards;
+      }
+
+      nav.open .nav-links {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 1.1em;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 15px 30px;
+      }
+
+      header img {
+        max-width: 120px;
+      }
+
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      header p.slogan {
+        font-size: 1em;
+      }
+
+      main {
+        padding: 40px 15px;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        font-size: 1.7em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      footer {
+        font-size: 0.8em;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -153,7 +264,10 @@
   </header>
 
   <nav>
-    <a href="programma.html"><strong>Programma</strong></a>
+    <button class="hamburger" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="programma.html"><strong>Programma</strong></a>
+    </div>
   </nav>
 
   <main>
@@ -168,6 +282,7 @@
   </footer>
 
   <script>
+    // Animazione sezioni
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -178,6 +293,14 @@
 
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
+    });
+
+    // Hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
     });
   </script>
 
