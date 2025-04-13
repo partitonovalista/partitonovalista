@@ -94,10 +94,11 @@
     section strong {
       color: #F4C430;
     }
-
-    .program-list li::marker {
-  color: #C62828;
-}
+    p::before {
+       content: "•";
+       color: #ff0000; /* rosso come il banner */
+       margin-right: 8px;
+    }
 
     ul {
       list-style: none;
