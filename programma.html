@@ -8,12 +8,6 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
     * { box-sizing: border-box; }
-    <script>
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('nav').classList.toggle('active');
-  });
-</script>
-</body>
 
     body, html {
       margin: 0;
@@ -140,26 +134,12 @@
   <header>
     <img src="logo.gif" alt="Logo Partito Novalista" />
     <h1>Il Programma</h1>
-  <header>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="programma.html">Programma</a></li>
-      <li><a href="statuto.html">Statuto</a></li>
-    </ul>
-  </nav>
-</header>
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navbar = document.getElementById('navbar');
-
-  menuToggle.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-</script>
-
   </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+
 <main>
   <section>
     <h2>I punti principali (non in ordine d’importanza)</h2>
@@ -307,28 +287,6 @@
   <footer>
     <p>&copy; Partito Novalista - Tutti i diritti riservati</p>
   </footer>
-         <script>
-    // Animazione sezioni
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-  </script>
 
 </body>
 </html>
