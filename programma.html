@@ -50,9 +50,9 @@
     .menu-toggle {
       display: none;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       width: 40px;
-      height: 40px;
+      height: 30px;
       cursor: pointer;
       position: absolute;
       top: 20px;
@@ -63,9 +63,8 @@
     .menu-toggle div {
       height: 4px;
       background: white;
-      margin: 6px 0;
       border-radius: 2px;
-      transition: 0.4s;
+      transition: transform 0.4s, background 0.4s;
     }
 
     nav {
@@ -130,33 +129,6 @@
       color: #F4C430;
       font-size: 2em;
       margin-bottom: 30px;
-    }
-
-    section strong {
-      color: #F4C430;
-    }
-
-    p::before {
-      content: "•";
-      color: #ff0000;
-      margin-right: 8px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
-
-    ul li {
-      padding: 14px 0;
-      border-bottom: 1px solid #666;
-      font-size: 1.2em;
-    }
-
-    ul li:last-child {
-      border-bottom: none;
     }
 
     footer {
@@ -334,10 +306,27 @@
     &copy; 2025 Partito Novalista. Tutti i diritti riservati.
   </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mainMenu').classList.toggle('active');
-  }
-</script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mainMenu");
+      const toggle = document.querySelector(".menu-toggle");
+      
+      // Cambia la classe per attivare/disattivare il menu
+      menu.classList.toggle("active");
+
+      // Animazione per il menu hamburger
+      const bars = toggle.querySelectorAll("div");
+      if (menu.classList.contains("active")) {
+        bars[0].style.transform = "rotate(45deg) translateY(6px)";
+        bars[1].style.opacity = "0";
+        bars[2].style.transform = "rotate(-45deg) translateY(-6px)";
+      } else {
+        bars[0].style.transform = "rotate(0)";
+        bars[1].style.opacity = "1";
+        bars[2].style.transform = "rotate(0)";
+      }
+    }
+  </script>
+
 </body>
 </html>
