@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Programma - Partito Novalista</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
     * { box-sizing: border-box; }
 
@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #3a3a3a; /* Grigio topo */
+      background-color: #3a3a3a;
       color: #f5f5f5;
       scroll-behavior: smooth;
       animation: fadeIn 1.2s ease-in;
@@ -46,11 +46,33 @@
       letter-spacing: 1px;
     }
 
+    /* MENU HAMBURGER */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .menu-toggle div {
+      height: 4px;
+      background: white;
+      margin: 6px 0;
+      border-radius: 2px;
+      transition: 0.4s;
+    }
+
     nav {
       background-color: #C62828;
       padding: 14px;
       text-align: center;
-      border-radius: 20px; /* Stondato su tutti i lati */
+      border-radius: 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
@@ -63,12 +85,30 @@
       padding: 8px 16px;
       border-radius: 10px;
       transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      display: inline-block;
     }
 
     nav a:hover {
       background-color: #F4C430;
       color: #C62828;
       transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
     main {
@@ -78,7 +118,7 @@
     }
 
     section {
-      background-color: #4a4a4a; /* Grigio più scuro per sezioni */
+      background-color: #4a4a4a;
       padding: 50px;
       border-radius: 16px;
       margin-bottom: 60px;
@@ -91,15 +131,15 @@
       font-size: 2em;
       margin-bottom: 30px;
     }
- 
 
     section strong {
       color: #F4C430;
     }
+
     p::before {
-       content: "•";
-       color: #ff0000; /* rosso come il banner */
-       margin-right: 8px;
+      content: "•";
+      color: #ff0000;
+      margin-right: 8px;
     }
 
     ul {
@@ -134,12 +174,18 @@
   <header>
     <img src="logo.gif" alt="Logo Partito Novalista" />
     <h1>Il Programma</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
-  <nav>
+  <nav id="mainMenu">
     <a href="index.html">Home</a>
+    <a href="statuto.html">Statuto</a>
+    <a href="manifesto.html">Manifesto</a>
   </nav>
-
 <main>
   <section>
     <h2>I punti principali (non in ordine d’importanza)</h2>
@@ -285,8 +331,15 @@
 </main>
 
   <footer>
-    <p>&copy; Partito Novalista - Tutti i diritti riservati</p>
+    &copy; 2025 Partito Novalista. Tutti i diritti riservati.
   </footer>
-       
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mainMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
